@@ -1,0 +1,16 @@
+async applySuggestion(newValue) {
+        //newValue = null;
+        await this.setState({ typingChecking: "false", suggestions: [], highlightedIndex: 0 });
+        this.state.suggestionCallback.dispatch({
+            type: 'WEB_CHAT/SEND_MESSAGE',
+            payload: {
+                text: newValue
+            }
+        });
+       this.state.suggestionCallback.dispatch({
+            type: 'WEB_CHAT/SET_SEND_BOX',
+            payload: {
+                text: " "
+            }
+        });
+    }`
